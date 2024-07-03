@@ -10,79 +10,94 @@ $color-open-icon: #777;
 // -----------------------------------------------------------------------------
 
 // Force all content open if there is no JS.
-.c-accordion__item.no-js {
-	.c-accordion__content {
-		display: block !important;
-	}
+.c-accordion {
 
-	.c-accordion__title {
-		padding-right: none;
-		cursor: default;
+	&__item {
+		display: block;
 
-		&:after {
-			display: none;
+		&.is-open {
+			.c-accordion__title {
+				&:after {
+					content: "\002D";
+				}
+			}
+		}
+
+		&.no-js {
+			.c-accordion__content {
+				display: block !important;
+			}
+
+			.c-accordion__title {
+				padding-right: none;
+				cursor: default;
+
+				&:after {
+					display: none;
+				}
+			}
 		}
 	}
-}
 
-.c-accordion__title--button {
-	display: inline-block;
-	color: inherit;
-	background-color: transparent;
-	text-align: left;
-	vertical-align: middle;
-	font: inherit;
-	text-decoration: none;
-	direction: ltr;
-	border: none;
-	border-radius: 0;
-	width: 100%;
-	height: auto;
-	padding: 0;
-	margin: 0;
-	transition: 0;
-	box-shadow: none;
-	overflow: auto;
-	appearance: none;
+	&__title {
+		position: relative;
+		padding-right: 2rem;
+		cursor: pointer;
+		margin: 0;
 
-	&:focus,
-	&:hover {
-		color: inherit;
-		background-color: transparent;
-	}
-}
-
-.c-accordion__title {
-	position: relative;
-	padding-right: 2rem;
-	cursor: pointer;
-
-	&:after {
-		position: absolute;
-		top: 50%;
-		right: 0;
-		content: "+";
-		color: $color-open-icon;
-		font-weight: 300;
-		transform: translateY(-50%);
-	}
-}
-
-.is-open {
-	& > button > .c-accordion__title {
 		&:after {
-			content: "\2212";
+			position: absolute;
+			top: 50%;
+			right: 0;
+			content: "\002B";
+			color: $color-open-icon;
+			font-weight: 300;
+			transform: translateY(-50%);
+		}
+
+		&--button {
+			display: inline-block;
+			color: inherit;
+			background-color: transparent;
+			text-align: left;
+			vertical-align: middle;
+			font: inherit;
+			text-decoration: none;
+			direction: ltr;
+			border: none;
+			border-radius: 0;
+			width: 100%;
+			height: auto;
+			padding: 0;
+			margin: 0;
+			transition: 0;
+			box-shadow: none;
+			overflow: auto;
+			appearance: none;
+
+			&:focus,
+			&:hover {
+				color: inherit;
+				background-color: transparent;
+			}
 		}
 	}
-}
 
-.c-accordion__content[hidden="until-found"] {
-	display: revert;
-}
+	&__content{
 
-// Make all the content visible when printing the page.
-@media print {
-	.c-accordion__content {
-		display: block !important;
+		&-wrapper {
+			overflow: hidden;
+		}
+
+		&[hidden="until-found"] {
+			display: revert;
+		}
+	}
+
+	// Make all the content visible when printing the page.
+	@media print {
+		.c-accordion__content {
+			display: block !important;
+		}
 	}
 }

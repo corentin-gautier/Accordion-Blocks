@@ -165,8 +165,9 @@ class AccordionItem extends HTMLElement {
 		this.isOpen = true;
 		this.content.removeAttribute('hidden');
 
+		this.setAttributes(true);
+
 		this.content.slideDown(noAnim ? 0 : AccordionItem.duration, () => {
-			this.setAttributes(true);
 			this.triggerResize();
 		});
 
