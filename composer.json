@@ -1,0 +1,8 @@
+{
+    "name": "cgsoft/accordion-blocks",
+    "description": "Gutenberg blocks for creating responsive accordion drop-downs.",
+    "type": "wordpress-plugin",
+    "license": "GPLv2 or later",
+    "version": "1.7.1",
+    "require": {}
+}

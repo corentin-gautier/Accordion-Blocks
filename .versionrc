@@ -11,6 +11,10 @@
 		{
 			"filename": "block.json",
 			"type": "json"
+		},
+		{
+			"filename": "composer.json",
+			"type": "json"
 		}
 	],
 	"types": [
