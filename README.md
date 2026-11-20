@@ -1,5 +1,9 @@
 # Accordion Blocks
 
+> [!WARNING]
+> **This repository is archived and no longer maintained.**
+> Gutenberg now ships a native Accordion block (WordPress 6.9+), which makes this plugin unnecessary. Please use the core block instead.
+
 Forked from [https://github.com/philbuchanan/Accordion-Blocks](https://github.com/philbuchanan/Accordion-Blocks)
 
 ## Description
